@@ -6,9 +6,13 @@ restaurantes = [
 
 
 def exibir_nome_app ():
+    """Aparece o inicio do sistema quando aberto o app"""
+
     print('Sabor Express:\n')
 
 def menu_app():
+    """Descreve as opções para acesso do sistema"""
+
     print('1. Cadastrar Restaurante')
     print('2. Listar Restaurante')
     print('3. Alternar Estado do Restaurante')
@@ -92,9 +96,13 @@ def estado_restaurante():
     voltar_menu(main)
     
 def finalizar_app():
+    """Chama a função exibir_mensagem para limpar o terminal e mostrar a mensagem finalizando o app"""
+
     exibir_mensagem('Finalizando o app')
 
 def opcao_invalida():
+    """Descreve que a opção do menu inicial não está dentro das opções descritas no menu"""
+    
     print ('Opção inválida!')
     voltar_menu(main)
 
