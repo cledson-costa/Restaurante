@@ -3,6 +3,4 @@ class Avaliacao:
         self._cliente = cliente
         self._nota = nota
     
-    def media(self):
-        for media in Avaliacao
 

@@ -21,12 +21,20 @@ class Restaurante:
     @classmethod
     def listar_restaurante(cls):
         for restaurante in cls.restaurantes:
-            print(f'{restaurante._nome} | {restaurante._categoria} | {restaurante.ativo}')
+            print(f'{restaurante._nome} | {restaurante._categoria} | {restaurante.ativo}' | str(restaurante.media_avaliacao))
     
     def receber_avaliacao(self, cliente, nota):
         avaliacao = Avaliacao(cliente, nota)
         self._avaliacao.append(avaliacao)
     
+    @property
+    def media_avaliacao(self):
+        if not self._avaliacao:
+            return 0
+        soma_notas = sum(avaliacao._nota for avaliacao in self._avaliacao)
+        quant_notas = len(self._avaliacao)
+        media = round(soma_notas/quant_notas, 1)
+        return media
 
 
 os.system('cls')
