@@ -1,5 +1,5 @@
 import os
-from avaliacao import Avaliacao
+from modelos.avaliacao import Avaliacao
 
 class Restaurante:
     restaurantes = []
@@ -21,7 +21,7 @@ class Restaurante:
     @classmethod
     def listar_restaurante(cls):
         for restaurante in cls.restaurantes:
-            print(f'{restaurante._nome} | {restaurante._categoria} | {restaurante.ativo}' | str(restaurante.media_avaliacao))
+            print(f'{restaurante._nome} | {restaurante._categoria} | {restaurante.ativo} | {str(restaurante.media_avaliacao)}')
     
     def receber_avaliacao(self, cliente, nota):
         avaliacao = Avaliacao(cliente, nota)
