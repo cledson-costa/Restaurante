@@ -24,13 +24,14 @@ class Restaurante:
             print(f'{restaurante._nome} | {restaurante._categoria} | {restaurante.ativo} | {str(restaurante.media_avaliacao)}')
     
     def receber_avaliacao(self, cliente, nota):
-        avaliacao = Avaliacao(cliente, nota)
-        self._avaliacao.append(avaliacao)
+        if 0 < nota <= 10:
+            avaliacao = Avaliacao(cliente, nota)
+            self._avaliacao.append(avaliacao)
     
     @property
     def media_avaliacao(self):
         if not self._avaliacao:
-            return 0
+            return '-.-'
         soma_notas = sum(avaliacao._nota for avaliacao in self._avaliacao)
         quant_notas = len(self._avaliacao)
         media = round(soma_notas/quant_notas, 1)
